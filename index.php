@@ -13,33 +13,32 @@
 <!-- CSS -->	
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
-<!-- Cargamos html5shiv si el navegador es un IE anterior al 9 para que se interpreten
-de forma correcta los tags sem·nticos de HTML5 -->
-<!--[if IE 6]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
-<![endif]-->
-<!--[if IE 7]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
-<![endif]-->
-<!--[if IE8]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
+<!-- Script Media Queries y sem√°nticos-->
+<!--[if lte IE 8]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
 
 </head>
 <body>
 <div id="wrap">
-<header>
-<!-- AquÌ ir· la cabecera -->
+<header id="cabecera_principal">
+	<div id="cabecera_principal_col_izda">
+		Aqu√≠ ir√° la imagen
+	</div>
+	<div id="cabecera_principal_col_dcha">
+		Aqu√≠ ir√° el buscador
+	</div>
 </header> 
 
-<nav>
-<!-- AquÌ ir· la barra de navegaciÛn -->
+<nav id="barra_navegacion">
+Aqu√≠ ir√° la barra de navegaci√≥n
 </nav> 
 
 <div id="main">
 <div id="primary">
 	<?php while (have_posts()) : the_post(); ?> <!-- principio del loop -->
-		<article>
+		<article class="layout_contenedor">
 			<?php if ( wp_is_mobile() ) {
 				if ( has_post_thumbnail() ) {
 				the_post_thumbnail('medium', array('class' => 'imagenes_elasticas' ));
@@ -53,11 +52,11 @@ de forma correcta los tags sem·nticos de HTML5 -->
 				<img src="<?php echo get_template_directory_uri(); ?>/images/sin_imagenes.jpg" class="imagenes_elasticas" />
 				<?php }
 			} ?>
-			<header>
+			<header class="layout_titular">
 				<h3><a href="<?php the_permalink( ); ?>"> <?php the_title() ; ?> </a></h3>
 			</header>
-			<?php the_excerpt() ; ?>
-			<aside>
+			<div class="layout_sumario"><?php the_excerpt() ; ?></div>
+			<aside class="layout_metadatos">
 				<p><?php _e('Clasificado en: ','mmfilesi-bones'); ?>
 				<?php the_category(', '); ?></p>
 				<p><?php the_tags(); ?></p>
@@ -69,13 +68,19 @@ de forma correcta los tags sem·nticos de HTML5 -->
 </div> <!-- #primary -->
 
 <aside id="secondary">
-<!-- AquÌ ir· la columna lateral (sidebar) -->
+Aqu√≠ ir√° la columna secundaria o sidebar
 </aside> <!-- #secondary -->
 
 </div> <!-- #main -->
 
-<footer>
-<!-- AquÌ ir· el pie de p·gina -->
+<?php if (mobile_detect()==0) { ?>
+<aside id="sibebar_inferior">
+Aqu√≠ ir√° el sidebar inferior
+</aside>
+<?php } ?>
+
+<footer id="pie">
+Aqu√≠ ir√° el pie
 </footer>
 
 </div> <!-- #wrap -->
