@@ -14,6 +14,36 @@ Funcionalidades añadidas
 add_theme_support( 'post-thumbnails' );
 
 /*-----------------------------------------------
+Sidebar
+----------------------------------------------- */
+
+function sidebars_init() {
+
+	register_sidebar(array(
+		'name' => __('Sidebar principal', 'mmfilesi-bones'),
+		'description' => 'Sidebar principal',
+		'id' => 'sidebar-principal',
+		'before_widget' => '<li class="sidebar_widget_lateral" id="%1$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h5>',
+		'after_title' => '</h5>',
+		));
+
+	register_sidebar(array(
+		'name' => __('Sidebar inferior', 'mmfilesi-bones'),
+		'description' => 'Sidebar inferior',
+		'id' => 'sidebar-inferior',
+		'before_widget' => '<li class="sidebar_widget_inferior" id="%1$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h5>',
+		'after_title' => '</h5>',
+		));
+
+}
+
+add_action( 'widgets_init', 'sidebars_init' );
+
+/*-----------------------------------------------
 Clases
 ----------------------------------------------- */
 

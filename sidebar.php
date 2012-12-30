@@ -1,3 +1,7 @@
 <aside id="secondary">
-Aquí irá la columna secundaria o sidebar
+<?php if ( is_active_sidebar( 'sidebar-principal' ) ) : ?>
+		<ul class="listas_widget">
+			<?php dynamic_sidebar( 'sidebar-principal' ); ?>
+		</ul>
+<?php endif; ?>
 </aside> <!-- #secondary -->

@@ -576,3 +576,48 @@ font-size: 0.8em;
 .palabras_partidas {
   word-wrap:break-word;
 }
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.listas_widget {
+ list-style-type: none;
+ margin: 0;
+ overflow: hidden;
+}
+
+.sidebar_widget_inferior {
+  float:left;
+  width: 45%;
+}
+
+/* Sidebar - responsive */
+
+@media screen and (max-width:820px){ 
+.sidebar_widget_lateral {
+  float:left;
+  width: 45%;
+}
+
+}
+
+
+@media screen and (max-width:360px){ 
+
+.sidebar_widget_lateral {
+  float:none;
+  width: 100%;
+}
+
+.sidebar_widget_inferior {
+  float:none;
+  width: 100%;
+}
+
+}
+
+
+
+
