@@ -620,4 +620,45 @@ font-size: 0.8em;
 
 
 
+/* ==========================================================================
+   Menús
+   ========================================================================== */
 
+#menu_principal {
+ list-style-type: none;
+ margin: 0;
+ padding:0;
+ overflow: hidden; 
+}
+
+#menu_principal li {
+  float:left;
+  margin-right: 1em;
+}
+
+#barra_inferior {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  overflow: hidden; 
+}
+
+#menu_inferior {
+ list-style-type: none;
+ margin: 0;
+ padding:0;  
+}
+
+#menu_inferior > li {
+  float:left;
+  margin-right: 1em;
+}
+
+#menu_inferior > li ul {
+  list-style-type: none;  
+  margin: 0;
+  padding:0;
+  background: #fff;
+  display: none; 
+  position:absolute;
+  z-index: 3; 
+}

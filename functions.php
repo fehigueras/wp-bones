@@ -13,6 +13,27 @@ Funcionalidades añadidas
 // añadir miniaturas
 add_theme_support( 'post-thumbnails' );
 
+
+/*-----------------------------------------------
+Menús
+----------------------------------------------- */
+
+register_nav_menus( array (
+	'principal' => __( 'barra principal', 'mmfilesi-bones' ),
+	'secundaria'=>__( 'barra secundaria', 'mmfilesi-bones' )
+));
+
+/*-----------------------------------------------
+Jqueries
+----------------------------------------------- */	
+
+function carga_jqueries() {	
+	wp_register_script('menu_desplegado', get_template_directory_uri() . '/js/menu_desplegado.js', array('jquery'),false);
+	wp_enqueue_script( 'menu_desplegado' );
+	} 
+add_action( 'wp_enqueue_scripts', 'carga_jqueries' ); 	
+
+
 /*-----------------------------------------------
 Sidebar
 ----------------------------------------------- */

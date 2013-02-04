@@ -40,8 +40,3 @@
 <?php get_sidebar('inferior'); ?>
 
 <?php get_footer(); ?>
-
-</div> <!-- #wrap -->
-
-</body>
-</html>
